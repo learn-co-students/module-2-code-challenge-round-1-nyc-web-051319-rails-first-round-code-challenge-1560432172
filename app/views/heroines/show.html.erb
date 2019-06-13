@@ -1,0 +1,12 @@
+<h1><%=@heroine.super_name%>'s Page</h1>
+
+<ul>
+  <li>Power: <%=@heroine.power_id%></li>
+  <li>Name: <%=@heroine.name%></li>
+  <li>Super Name: <%=@heroine.super_name%></li>
+</ul>
+
+<%=button_to("Update Heroine", "/heroines/#{@heroine.id}/edit", method: "get")%>
+<%=button_to("Delete Heroine", "/heroines/#{@heroine.id}", method: "delete")%>
+
+<%=link_to "Heroines Homepage", "/heroines"%>

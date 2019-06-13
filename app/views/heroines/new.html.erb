@@ -1,0 +1,22 @@
+<h1>Heroine New</h1>
+
+<%=form_for @heroine do |f|%>
+  <%= f.label "Name"%>
+  <%= f.text_field "name"%>
+  <%= f.label "Super Name"%>
+  <%= f.text_field "super_name"%>
+  <br>
+  <%= f.label "Power"%>
+  <br>
+  <%= f.radio_button "power", "Super Strength"%>Super Strength
+  <br>
+  <%= f.radio_button "power", "Flight"%>Flight
+  <br>
+  <%= f.radio_button "power", "Super Human Senses"%>Super Human Senses
+  <br>
+  <%= f.radio_button "power", "Elasticity"%>Elasticity
+  <br>
+
+  <br>
+  <%= f.submit "Submit"%>
+<%end%>

@@ -1,0 +1,12 @@
+<h1>Power Show Page</h1>
+
+<h3> Name: <%=@power.name%>
+<h3><%=@power.name%>'s Heroines:
+<ul>
+  <%@power.heroines.each do |heroine|%>
+  <li><%= link_to heroine.name, heroine_path %></li>
+  <%end%>
+</ul>
+</h3>
+
+<%=link_to "Powers Homepage", "/powers"%>
