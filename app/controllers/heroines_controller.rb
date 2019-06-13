@@ -2,7 +2,7 @@ class HeroinesController < ApplicationController
   before_action :set_heroine, only: [:show, :destroy]
 
   def index
-    @heroines = Heroine.all
+    @heroines = Heroine.search(params[:search])
   end
 
   def show
@@ -24,10 +24,10 @@ class HeroinesController < ApplicationController
     end
   end
 
-  def destroy
-    @heroine.delete
-    redirect_to heroines_path
-  end
+  # def destroy
+  #   @heroine.delete
+  #   redirect_to heroines_path
+  # end
 
   private
 
@@ -36,6 +36,6 @@ class HeroinesController < ApplicationController
   end
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :search)
   end
 end
