@@ -1,0 +1,12 @@
+<h1> <%= @heroine.name %>'s Page </h1>
+
+<% if flash[:success] %>
+  <h2><%= flash[:success] %></h2><br>
+<% end %>
+
+<b>Super Name :</b> <%= @heroine.super_name %><br>
+<b>Power :</b> <%= link_to @heroine.power.name, power_path(@heroine.power.id) %>
+
+<%# <% button_to "delete", @heroine, method: :delete   this is the button to delete a heroine, Although not asked for, I wanted to attempt it to make sure I had an understanding of it. %> 
+
+<br><h3><%= link_to "Back to Heroines Home Page", heroines_path %></h3>
