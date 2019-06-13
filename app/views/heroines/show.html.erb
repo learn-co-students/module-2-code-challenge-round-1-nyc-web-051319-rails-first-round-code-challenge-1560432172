@@ -3,4 +3,5 @@
 <p><%=@heroine.name%> AKA <%= @heroine.super_name %></p>
 
 <%@heroine_power = @heroine.power%>
-<%=link_to @heroine.power.name, power_path(@heroine_power)%>
+
+<p>Ability: <%=link_to @heroine.power.name, power_path(@heroine_power)%></p>
