@@ -43,6 +43,6 @@ before_action :find_heroine, only: [:show, :edit, :update] #if the delete/destor
 
 #this helper method also helps me save some time by creating a simple and efficient way to capture all the parameters that are required when creating a new heroine, could also use when editing a heroine, I am aware that was not asked for as a deliverable though
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :search)
   end
 end
