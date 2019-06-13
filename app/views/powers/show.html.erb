@@ -1,7 +1,15 @@
-<h1><%= @power.name %></h1>
+<h1><%= @power.name.titlecase %></h1>
 
 <h3>Description:</h3>
 <blockquote><%= @power.description %>
+</blockquote>
+
+<h3>Heroines:</h3>
+<ul>
+<blockquote><% @power.heroines.each do |heroine| %>
+  <li><%= link_to heroine.name, heroine_path(heroine) %></li>
+<%end%>
+</ul>
 </blockquote>
 
 <br>

@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  font-family: 'Bangers', cursive;
+}
+
+h2 {
+  font-family: 'Bangers', cursive;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Bangers', cursive;
+}
+
+body {
+  font-family: "Comic Sans MS";
+}
