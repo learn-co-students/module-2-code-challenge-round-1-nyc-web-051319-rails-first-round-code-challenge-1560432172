@@ -5,12 +5,12 @@
   <% end %>
 
   <%= form_for @heroine do |f| %>
-  <%= f.label "Name :"%>
-  <%= f.text_field :name%>
-  <%= f.label "Super Name :"%>
-  <%= f.text_field :super_name %>
-  <%= f.label "Power :" %>
-  <%= f.collection_select(:power_id, Power.all, :id, :name, prompt: true) %>
+  <b><%= f.label "Name :"%></b><br>
+  <%= f.text_field :name%><br>
+  <b><%= f.label "Super Name :"%></b><br>
+  <%= f.text_field :super_name %><br>
+  <%# <%= f.label "Power :" %>
+  <br><%= f.collection_select(:power_id, Power.all, :id, :name, prompt: "Select Heroine Power") %>
   <%= f.submit %>
   <% end  %>
 
