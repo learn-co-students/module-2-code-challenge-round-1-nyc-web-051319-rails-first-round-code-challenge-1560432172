@@ -1,0 +1,11 @@
+<h1>I HAVE THE POWER!</h1>
+
+<p>Power: <%=@power.name%>
+<p>Description: <%=@power.description %></p>
+<p>Here's who has this power: <% @power.heroines.each do |heroine|%></p>
+<p><%= heroine.name %></p>
+
+<% end %>
+
+
+<%= button_to "Create your own!", new_heroine_path, method: "get" %>
