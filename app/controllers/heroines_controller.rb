@@ -1,6 +1,10 @@
 class HeroinesController < ApplicationController
   def index
-    @heroines = Heroine.all
+    if params[:search]
+      @heroines = Heroine.all.select {|heroine| heroine.power.name.include?(params[:search])}
+    else
+      @heroines = Heroine.all
+    end
   end
 
   def show

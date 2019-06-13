@@ -1,4 +1,4 @@
-<h1><%= @heroine.name %></h1>
+<h1><%= @heroine.super_name %></h1>
 
-<h2><%= @heroine.super_name %></h2>
-<h2><%=link_to @heroine.power.name, power_path(@heroine.power.id) %></h2>
+<p><strong>Name:</strong> <%= @heroine.name %></p>
+<p><strong>Power:</strong> <%=link_to @heroine.power.name, power_path(@heroine.power.id) %></p>
