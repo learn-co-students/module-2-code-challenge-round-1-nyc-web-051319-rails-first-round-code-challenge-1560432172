@@ -1,8 +1,8 @@
-<%= @hero.name%>
+Name: <%= @hero.name%>
 <br>
-<%=@hero.super_name%>
+Super name: <%=@hero.super_name%>
 <br>
-<%=link_to @hero.power.name.upcase , power_path%>
+Super Power: <%=link_to @hero.power.name , power_path(@power)%>
 <%=%>
 <%=%>
 <%=%>

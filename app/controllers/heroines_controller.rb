@@ -5,6 +5,7 @@ class HeroinesController < ApplicationController
 
   def show
     @hero = Heroine.find(params[:id])
+    @power = Power.find(@hero.power.id)
   end
 
   def new
