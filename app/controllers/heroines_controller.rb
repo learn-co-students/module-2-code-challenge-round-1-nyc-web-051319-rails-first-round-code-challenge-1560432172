@@ -2,6 +2,14 @@ class HeroinesController < ApplicationController
 
   def index
     @heroines = Heroine.all
+    # if params[:search]
+    #   @search = params[:search]
+    #   @heroines = Heroine.all.select do |heroine|
+    #     heroine.power.name.downcase == @search.downcase
+    #   end
+    # else
+    #   @heroines = Heroine.all
+    # end
   end
 
   def show
@@ -13,11 +21,8 @@ class HeroinesController < ApplicationController
     @powers = Power.all
   end
 
-  # why is this not recongizing create method
   def create
-    byebug
-    @heroine = Heroine.find(params[:id])
-    @heroine.create(heroine_params)
+    @heroine = Heroine.create(heroine_params)
     redirect_to @heroine
   end
 

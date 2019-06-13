@@ -4,3 +4,6 @@
 <p><strong>Real Name:</strong><%= @heroine.name %></p>
 <p><strong>Power:</strong><%= link_to @heroine.power.name, "/powers/#{@heroine.power_id}" %></p>
 <p><strong>Power Description:</strong><%= @heroine.power.description %></p>
+
+<a href="/heroines"><button>Heroine List</button></a>
+

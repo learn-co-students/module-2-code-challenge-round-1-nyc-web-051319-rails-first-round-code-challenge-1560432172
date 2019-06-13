@@ -9,4 +9,14 @@
   <% end %>
 </ul>
 
+<br>
+<hr>
+<p>Search by Powers:
+  <%= form_tag '/heroines' do%>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+
+<%end%>
+</p>
+
 <a href="/heroines/new"><button>Create a New Heroine</button></a>
