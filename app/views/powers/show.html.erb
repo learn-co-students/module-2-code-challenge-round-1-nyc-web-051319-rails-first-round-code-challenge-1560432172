@@ -1,0 +1,10 @@
+<h1><%= @power.name %></h1>
+<li>
+    <%= @power.description %>
+</li>
+<% @power.heroines.each do |heroine| %>
+<li>
+    <%=link_to heroine.super_name, "/heroines/#{heroine.id}" %>
+</li>
+<% end %>
+<%= button_to('All Powers', "/powers", method: "get") %>

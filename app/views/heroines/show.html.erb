@@ -1,0 +1,9 @@
+<h1><%= @heroine.super_name %></h1>
+
+<li>
+Name: <%=@heroine.name%>
+</li>
+<li>
+Superpower: <%=link_to @heroine.power.name, "/powers/#{@heroine.power.id}"%>
+</li>
+<%= button_to('All Heroines', "/heroines", method: "get") %>
