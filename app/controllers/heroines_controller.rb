@@ -1,11 +1,18 @@
 class HeroinesController < ApplicationController
-  before_action :self_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @heroines = Heroine.all
+    input = params[:search]
+    if input
+      @heroines = Heroine.all.select do |heroine|
+        heroine.power.name.downcase.include?(input.downcase)
+      end
+    else
+      @heroines = Heroine.all
+    end
   end
 
   def show
+    @heroine = Heroine.find(params[:id])
     @power = @heroine.power
   end
 
@@ -25,25 +32,11 @@ class HeroinesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-
-
 
   private
-
-  def self_find
-    @heroine = Heroine.find(params[:id])
-  end
 
   def heroine_params
     params.require(:heroine).permit(:name, :super_name, :power_id)
   end
+
 end
