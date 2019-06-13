@@ -1,0 +1,14 @@
+<h1><%= @heroine.super_name %>'s Page</h1>
+
+Name: <%= @heroine.name %>
+<br>
+Super Name: <%= @heroine.super_name %>
+<br>
+Power:
+<% @powers.each do |power| %>
+  <% power.heroines.each do |heroine|  %>
+    <% if heroine.name == @heroine.name %>
+      <%= link_to power.name, power_path(power) %>
+    <% end %>
+  <% end %>
+<% end %>
