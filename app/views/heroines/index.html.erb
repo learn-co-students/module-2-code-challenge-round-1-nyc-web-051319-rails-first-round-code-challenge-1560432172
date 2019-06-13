@@ -1,10 +1,20 @@
 <h2>All Heroines</h2>
 
+<!-- search -->
+
+<!-- search -->
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<%= button_to "New heroine", new_heroine_path, method: "get" %>
+<br>
+<%= link_to "All heroines.", heroines_path %>
+<br>
+<%= link_to "All powers.", powers_path %>
