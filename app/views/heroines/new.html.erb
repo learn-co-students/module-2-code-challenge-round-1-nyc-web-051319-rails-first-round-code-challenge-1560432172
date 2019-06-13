@@ -1,0 +1,22 @@
+<h1>Create New Heroine</h1>
+
+<h4><% if flash[:message] %>
+  <%= flash[:message] %>
+<% end  %>
+</h4>
+<br>
+<%= form_for @heroine do |f| %>
+  <%= f.label "Name:" %>
+  <%= f.text_field "name" %><br>
+  <br>
+  <%= f.label "Super Name:" %>
+  <%= f.text_field "super_name" %><br>
+  <br>
+  <%= f.collection_select(:power_id, @powers, :id, :name, prompt: true) %><br>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<br>
+<%= button_to "Go Back to Main Page", {:action => "index"}, :method => :get %>
