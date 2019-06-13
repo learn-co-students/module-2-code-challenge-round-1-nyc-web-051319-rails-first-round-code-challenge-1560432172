@@ -1,11 +1,19 @@
 class HeroinesController < ApplicationController
   def index
     @heroines = Heroine.all
+    input = params[:query]
+    if input
+    @heroines = Heroine.all.select do |hero|
+         hero.power.name.include?(input)
+      end
+    else
+
+    end
   end
 
   def show
-    @hero = Heroine.find(params[:id])
-    @power = Power.find(@hero.power.id)
+      @heroines = Heroine.find(params[:id])
+      @power = Power.find(@heroines.power.id)
   end
 
   def new
