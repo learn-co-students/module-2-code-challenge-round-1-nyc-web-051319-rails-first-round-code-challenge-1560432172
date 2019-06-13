@@ -1,0 +1,21 @@
+<center>
+
+<h1>Create your new heroine here</h1>
+<hr>
+<br>
+
+<%if flash[:message]%>
+<%=flash[:message]%>
+<%end%>
+<%=form_for @heroine do |f|%>
+<%=f.label "Name"%>
+<%=f.text_field "name"%>
+<%=f.label "Super Name"%>
+<%=f.text_field "super_name"%>
+<%=f.label "Power"%>
+<%=f.collection_select :power_id, @powers, :id, :name, prompt: true %>
+<%=f.submit "Submit"%>
+<%end%>
+<%=button_to "Home Page", heroines_path, :method => :get %>
+
+</center>

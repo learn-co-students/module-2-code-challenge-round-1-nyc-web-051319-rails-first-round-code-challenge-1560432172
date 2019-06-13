@@ -1,0 +1,8 @@
+<h1><%=@heroine.super_name%></h1>
+<br>
+Real Name: <%=@heroine.name%>
+<br>
+Power: <%=link_to "#{@heroine.power.name}", power_path(@heroine.power)%>
+
+<%=button_to "Home Page", heroines_path, :method => :get %>
+<%=button_to "Delete", {:action => :destroy}, :method => :delete%>
