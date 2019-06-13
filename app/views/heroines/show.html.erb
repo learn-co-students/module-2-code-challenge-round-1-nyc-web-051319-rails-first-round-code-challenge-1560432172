@@ -1,0 +1,7 @@
+<h3><%= @heroine.super_name %></h3>
+
+Name: <%= @heroine.name %><br><br>
+Power: <%= link_to @heroine.power.name, power_path(@heroine.power)%><br><br>
+
+<%= button_to "Return to Heroines", heroines_path, method: "get" %><br>
+<%= button_to "Destroy Heroine", {action: "destroy", controller: "heroines", id: @heroine.id}, method: "delete" %>
