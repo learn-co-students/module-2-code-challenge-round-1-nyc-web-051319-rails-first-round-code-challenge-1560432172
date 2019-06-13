@@ -1,11 +1,10 @@
 class HeroinesController < ApplicationController
   def index
-    # if params[:q]
-    #   @heroines = Heroine.all.select{power.downcase.include?(params[:q].downcase)}
-      # where(self.power.downcase.include?(params[:q].downcase))
-    # else
+    if params[:q]
+      @heroines = Heroine.all.select{|h| h.power.name.downcase.include?(params[:q].downcase)}
+    else
       @heroines = Heroine.all
-    # end
+    end
   end
 
   def show
@@ -24,7 +23,7 @@ class HeroinesController < ApplicationController
 private
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :q)
   end
 
 end
